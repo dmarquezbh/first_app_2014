@@ -8,6 +8,6 @@ FirstApp::Application.routes.draw do
   #match 'black' => 'welcome#black', :via => :get, :as => :black
 
   get 'black', to: 'welcome#black'
-
+  get 'about', to: 'welcome#about', as: :about
 
 end

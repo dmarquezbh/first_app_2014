@@ -9,5 +9,7 @@ class WelcomeController < ApplicationController
     render layout: 'application_black'
   end
 
-
+  def about
+    @address = "Rua Maranhão, 1283"
+  end
 end
