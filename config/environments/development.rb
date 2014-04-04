@@ -27,6 +27,6 @@ FirstApp::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.log_level = :debug
-  config.active_record.logger = Logger.new(STDOUT)
+  #config.log_level = :debug
+  #config.active_record.logger = Logger.new(STDOUT)
 end
