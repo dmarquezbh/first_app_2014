@@ -10,4 +10,5 @@ FirstApp::Application.routes.draw do
   get 'black', to: 'welcome#black'
   get 'about', to: 'welcome#about', as: :about
 
+  resources :users
 end

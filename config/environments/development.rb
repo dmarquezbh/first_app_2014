@@ -28,4 +28,5 @@ FirstApp::Application.configure do
   config.assets.debug = true
 
   config.log_level = :debug
+  config.active_record.logger = Logger.new(STDOUT)
 end

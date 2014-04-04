@@ -1,0 +1,14 @@
+<% if @users.any? %>
+
+  <% @users.each do |user| %>
+    <%= "#{user.name}, #{user.email} - #{user.age}" %>
+  <% end %>
+  
+<% else %>
+
+<div class="alert">
+  Nenhum usuário cadastrado
+</div>
+
+<% end %>
+
