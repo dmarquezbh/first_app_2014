@@ -1,0 +1,9 @@
+<% if @bill.destroyed? %> 
+  $("#bill_<%= @bill.id %>").fadeOut('slow', function(){
+     $("#bill_<%= @bill.id %>").remove();
+     <% index = render partial: 'bills/index', locals: { bills: @bill.user.bills } %>
+     $("#bills").html(" <%= j index %>");
+    }
+  );
+
+<% end %>
