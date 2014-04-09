@@ -5,7 +5,7 @@ describe ".index", type: :feature do
   it 'access home page' do
     
     visit root_path
-    page.should have_content("Hello Daniel Marques!") 
+    page.should have_content("Bem vindo usuário Daniel Marques!") 
 
   end
 

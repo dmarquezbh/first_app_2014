@@ -32,19 +32,6 @@ ActiveRecord::Schema.define(version: 20140409002351) do
 
   add_index "bills", ["user_id"], name: "index_bills_on_user_id"
 
-  create_table "daniels", force: true do |t|
-    t.string   "teste"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "testes", force: true do |t|
-    t.string   "nome"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "name",                                null: false
     t.string   "email",                               null: false

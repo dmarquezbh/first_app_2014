@@ -2,38 +2,43 @@ require 'spec_helper'
 
 describe User do
 
+  
+
   it 'createas a valid user' do
     user = User.new name: "João Lucas",
                     email: "jlucasps@gmail.com",
-                    age: 25, gender: User::MALE
+                    age: 25, 
+                    gender: User::MALE,
+                    password: "12345",
+                    password_confirmation: "12345"
 
     user.save.should be_true
   end
 
   it 'fails to create an user with blank name' do
-    user = User.new email: "jlucasps@gmail.com", age: 25
+    user = User.new email: "jlucasps@gmail.com", age: 25, password: "12345", password_confirmation: "12345"
     user.save.should be_false
   end
 
   it 'fails to create an user with blank email' do
-    user = User.new name: "João Lucas", age: 25
+    user = User.new name: "João Lucas", age: 25, password: "12345", password_confirmation: "12345"
     user.save.should be_false
   end
 
   it 'creates a user with gender value FEMALE' do
-    user = User.new name: "Candice", email: "candice@gmail.com", gender: User::FEMALE
+    user = User.new name: "Candice", email: "candice@gmail.com", gender: User::FEMALE, password: "12345", password_confirmation: "12345"
     user.save.should be_true
   end
 
 
   context 'when age >= 18' do
     it 'creates an user with gender' do
-      user = User.new name: "n", email:"e", age: 19, gender: User::MALE
+      user = User.new name: "n", email:"e@teste.com", age: 19, gender: User::MALE, password: "12345", password_confirmation: "12345"
       user.save.should be_true
     end
 
     it 'does not create with blank gender' do
-      user = User.new name: "n", email:"e", age: 19
+      user = User.new name: "n", email:"e@teste.com", age: 19, password: "12345", password_confirmation: "12345"
       user.save.should be_false
     end
   end
@@ -41,12 +46,12 @@ describe User do
   context 'when age < 18' do
 
     it 'creates an user with gender' do
-      user = User.new name: "n", email:"e", age: 17, gender: User::MALE
+      user = User.new name: "n", email:"e@teste.com", age: 17, gender: User::MALE, password: "12345", password_confirmation: "12345"
       user.save.should be_true
     end
 
     it 'does not create with blank gender' do
-      user = User.new name: "n", email:"e", age: 17
+      user = User.new name: "n", email:"e@teste.com", age: 17, password: "12345", password_confirmation: "12345"
       user.save.should be_true
     end
   end
@@ -54,11 +59,11 @@ describe User do
   it 'does not create two users with same email' do
     user1 = User.create name: "João lucas",
                         email: "jlucasps@gmail.com",
-                        age: 17
+                        age: 17, password: "12345", password_confirmation: "12345"
 
     user2 = User.new name: "João Lucas",
                         email: "jlucasps@gmail.com",
-                        age: 17
+                        age: 17, password: "12345", password_confirmation: "12345"
 
     user2.save.should be_false
 

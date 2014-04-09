@@ -25,7 +25,25 @@
       <% options = [ ["Feminino", User::FEMALE], ["Masculino", User::MALE]   ] %>
       <%= f.select :gender, options, { include_blank: " -- Escolha um sexo -- "}, class: "form-control" %>
    </div>
-    <br>
+   <br>
+
+
+   <div class="input-group col-md-6">
+      <span class="input-group-addon">Senha</span>
+      <%= f.password_field :password, autocomplete: "off" %></div>
+   </div>
+   <br>
+
+
+
+
+   <div class="input-group col-md-6">
+      <span class="input-group-addon">Confirmação Senha</span>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+   </div>
+   <br>
+
+
   <%= f.submit 'Salvar', class: 'btn btn-success' %>
 
 <% end %>
