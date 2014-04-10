@@ -57,3 +57,5 @@ end
  gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+
+gem 'factory_girl_rails', '~> 4.0'

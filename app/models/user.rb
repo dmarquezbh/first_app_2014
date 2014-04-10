@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   MALE = 2
   OTHER = 3
 
+  default_scope { order('users.email ASC') }
   validates :name, presence: true, allow_blank: false
   validates :email, presence: true, allow_blank: false
   #validates :age, presence: true, allow_blank: false
