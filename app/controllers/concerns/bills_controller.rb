@@ -20,12 +20,24 @@
     @bill.update bill_params
   end
 
+  def new_bill
+    @bill = Bill.new
+    @users = User.all
+  end
+
+  def create_bill
+    @bill = Bill.create create_bill_params
+    @users = User.all
+  end
+
   private 
 
   def bill_params
     params.require(:bill).permit(:name, :description, :value, :date)
   end
 
-
+  def create_bill_params
+    params.permit(:name, :user_id, :description, :value, :date)
+  end
 
 end
