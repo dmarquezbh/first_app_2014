@@ -1,12 +1,16 @@
-<%= form_for comment do |f| %>
+<%= form_for comment, remote: true do |f| %>
+
+ <%= render partial: 'shared/error_messages', locals: { resource: comment } %>
+
+ <%= hidden_field_tag :user_id, user_id %>
 
  <div class="input-group">
    <span class="input-group-addon">
      <i class="glyphicon glyphicon-user"></i>
    </span>
-   <% elements = commentables.map { |commentable| [ commentable.name, commentable.id ] } %>
+   <% elements = commentables.map { |commentable| [ commentable.name, "#{commentable.class}_#{commentable.id}" ] } %>
    <% options = options_for_select elements %>
-   <%= f.select :commentable_id, options, class: 'form-control' %>
+   <%= f.select :type_and_id, options, class: 'form-control' %>
  </div>
  
  <div class="input-group">

@@ -20,7 +20,10 @@
 <%= content_for :sidebar do %>
   <% commentables = [@user] + @user.bills.to_a %>
 
-  <%= render partial: 'comments/form', locals: { comment: Comment.new, commentables: commentables } %>
+  <%= render partial: 'comments/form', 
+             locals: { comment: Comment.new, 
+                       commentables: commentables,
+                       user_id: @user.id } %>
 
   <div id='comments'>
     <%= render partial: 'comments/index' , locals: { commentables: commentables } %>
