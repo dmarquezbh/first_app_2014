@@ -7,6 +7,7 @@ class Bill < ActiveRecord::Base
 
 
   belongs_to :user
+  has_many :comments, as: :commentable
 
 
   default_scope { order('bills.date DESC') }

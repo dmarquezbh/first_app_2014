@@ -10,4 +10,10 @@ body {
 .edit_bill
 {
   background-color: #CCCCCC;
-  }
+}
+
+.save-comment
+{
+  width: 100%;
+  margin: 3px 0 15px;
+}

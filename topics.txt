@@ -1,0 +1,1 @@
+apijson/transacao/sessao(fora do model ou existente)/integração com outros rests

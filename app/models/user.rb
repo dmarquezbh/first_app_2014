@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_many :bills, dependent: :destroy
+  has_many :comments, as: :commentable
 
   def adulthood
     self.age.present? and self.age >= 18
