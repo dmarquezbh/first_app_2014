@@ -47,6 +47,17 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+
+  def delete_comments
+    user = User.find params[:id]
+
+    Comment.destroy_all commentable_id: user.id,
+                        commentable_type: User
+    Comment.destroy_all commentable_id: user.bills.map(&:id),
+                        commentable_type: Bill
+  end
+
+
   private
 
   def user_params

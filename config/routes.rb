@@ -12,10 +12,13 @@ FirstApp::Application.routes.draw do
   get 'about', to: 'welcome#about', as: :about
 
   resources :users do
+    member do
+      delete 'delete_comments'
+    end
     resources :bills
   end
 
-  resources :comments
+  resources :comments 
 
 
   get '/new_bill', to: 'bills#new_bill', as: :new_bill

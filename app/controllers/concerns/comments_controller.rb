@@ -6,6 +6,4 @@ class CommentsController < ApplicationController
     @comment = Comment.create_from_sidebar(params)
   end
 
-
-
 end
